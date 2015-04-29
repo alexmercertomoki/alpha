@@ -16,23 +16,24 @@ public class DoctorAdviceServlet extends HttpServlet {
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
-		
+		//set up file acceptance to xml 
 		resp.setContentType("text/xml");
 		resp.getWriter().println("<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>");
 		
 		Random r =new Random(); 
 		//mdtfinalgroup1         appid
 		
-					
+		// all the attributes we need 
 		String userName= req.getParameter("userName");
 		String id= req.getParameter("id");
 		String Height =req.getParameter("Height");
 		String Gender =req.getParameter("Gender");
 		String BloodPressure =req.getParameter("BloodPressure");
 		String HeartRate =req.getParameter("HeartRate");
-	
+		//add to list 
 		personAr.add(userName+" "+id+" "+Height+" "+Gender+" "+BloodPressure+" "+HeartRate);
 		
+		// the printer 
 		PrintWriter out= resp.getWriter();
 		
 //		String[] advice =  new String[10];
@@ -43,14 +44,14 @@ public class DoctorAdviceServlet extends HttpServlet {
 //		adviceAr.add(advice[0]);
 //		adviceAr.add(advice[1]);
 //		adviceAr.add(advice[2]);
-		
+		//get advice 
 		for(int i = 0; i < adviceAr.size();i++){
 			System.out.println(adviceAr.get(i));
 		}
 		
 //		out.print(advice[r.nextInt(adviceAr.size())]);
 		
-		
+		//  give the xml back 
 		System.out.println(" Hey this should be printed out  ");
 		out.print(adviceAr.get(adviceAr.size()-1));
 		

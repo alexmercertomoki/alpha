@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)http://221.12.149.186/ict/view/gadget/gadget.html?te-uniquekey=14cf1905201 -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<title>なごやかスマイルネット</title>
+<!-- ↓ ■□■□ 追加 □■□■ ↓ -->
+<!-- 新デザイン様式 -->
+<link rel="stylesheet" href="./ournet_files/base.css" type="text/css" baseviewid="/view/gadget/gadget.html">
+<link rel="stylesheet" href="./ournet_files/gadget.css" type="text/css" baseviewid="/view/gadget/gadget.html">
+<link rel="stylesheet" href="./ournet_files/gadget.css" type="text/css" baseviewid="/view/gadget/gadget.html">
+<!-- ！新デザイン様式 -->
+<script type="text/javascript" language="JavaScript" src="./ournet_files/jquery-1.11.2.min.js" baseviewid="/view/gadget/gadget.html"></script>
+<script type="text/javascript" language="JavaScript" src="./ournet_files/hammer.min.js" baseviewid="/view/gadget/gadget.html"></script>
+<script type="text/javascript" language="JavaScript" src="./ournet_files/jquery.easing.1.3.js" baseviewid="/view/gadget/gadget.html"></script>
+<script type="text/javascript" language="JavaScript" src="./ournet_files/createjs-2014.12.12.min.js" baseviewid="/view/gadget/gadget.html"></script>
+<script type="text/javascript" language="JavaScript" src="./ournet_files/PdMenu.js" baseviewid="/view/gadget/gadget.html"></script>
+<script type="text/javascript" language="JavaScript" src="./ournet_files/CrossMenu.js" baseviewid="/view/gadget/gadget.html"></script>
+<script type="text/javascript" language="JavaScript" src="./ournet_files/Main.js" baseviewid="/view/gadget/gadget.html"></script>
+<script type="text/javascript" language="JavaScript" src="./ournet_files/app.js" baseviewid="/view/gadget/gadget.html"></script>
+<script type="text/javascript" language="JavaScript" baseviewid="/view/gadget/gadget.html">
+$(window).load(function(){
+
+	blinkBla();
+	
+});
+function blinkYel(){
+
+	$(".blink").attr("style", "color:yellow");
+
+	setTimeout("blinkBla()",300)
+}
+function blinkBla(){
+
+	$(".blink").attr("style", "color:red");
+
+	// setTimeout("blinkYel()",200)
+}
+</script>
+<!-- ↑ ■□■□ 追加 □■□■ ↑ -->
+</head>
+
+<body onload="init();" style="opacity: 1;">
+	<!-- debug -->
+	<!-- <div id="dView"></div> -->
+
+
+	<!-- ground -->
+	<canvas id="cvs" height="669" width="902"></canvas>
+
+	<!-- contents -->
+	<div id="wrapper" class="uns" style="touch-action: pan-x pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+
+		<!-- menu panel -->
+		<div id="menu" style="opacity: 1; visibility: visible;">
+			<ul id="menuGp" style="left: 0px; top: 0px;">
+				<li id="p_c" idx="0" path="http://www.yahoo.jp" class="uns">
+				<div path="/ict/view/images/c_0.png" class="menuGr" style="background-image: url(http://221.12.149.186/ict/view/images/c_0.png);">
+				<p class="ttl">Myナビゲータ</p>
+				<p class="sub">MyナビゲータではスケジュールやTODOリスト、ドキュメントなど<br>
+					あなた自身に関係する内容が確認できます。</p>
+				</div></li>
+				<li id="p_t" idx="1" path="http://www.yahoo.jp/2" class="uns">
+				<div path="/ict/view/images/c_1.png" class="menuGr" style="background-image: url(http://221.12.149.186/ict/view/images/c_1.png);">
+				<p class="ttl">カレンダー</p>
+				<p class="sub">総合カレンダーサービスやスーケジュールや看護サービスなど<br>
+					あなた自身に関係する内容が確認できます。</p>
+				</div>
+				</li>
+				<li id="p_r" idx="2" path="http://www.yahoo.jp/3" class="uns">
+				<div path="/ict/view/images/c_2.png" class="menuGr" style="background-image: url(http://221.12.149.186/ict/view/images/c_2.png);">
+				<p class="ttl">メディノート</p>
+				<p class="sub">医療安心ノートやお薬ノートやADL情報など<br>
+					あなた自身に関係する内容が確認できます。</p>
+					</div>
+					</li>
+			<li id="p_d" idx="3" path="http://www.yahoo.jp/4" class="uns">
+				<div path="/ict/view/images/c_3.png" class="menuGr" style="background-image: url(http://221.12.149.186/ict/view/images/c_3.png);">
+				<p class="ttl">ドキュメント</p>
+				<p class="sub">診療サマリーや看護さまりーやリハビリさまりーなど<br>
+					あなた自身に関係する内容が確認できます。</p>
+					</div>
+				</li>
+
+			<li id="p_l" idx="4" path="http://www.yahoo.jp/5" class="uns">
+				<div path="/ict/view/images/c_4.png" class="menuGr" style="background-image: url(http://221.12.149.186/ict/view/images/c_4.png);">
+				<p class="ttl">遠隔カンファレンス</p>
+				<p class="sub">カンファレンス登録やカンファレンス日程調整やカンファレンス資料など<br>
+					あなた自身に関係する内容が確認できます。</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div id="menuTap"></div>
+
+		 <!-- crossmenu -->
+		<span id="crossMenu" style="visibility: visible;">
+			<div id="up" style="background-image: url(http://221.12.149.186/ict/view/images/ic_1.png);"><img height="7" width="13" src="./ournet_files/arwUD.png"><span class="cttl allfont">Calendar</span></div>
+			<div id="down" style="background-image: url(http://221.12.149.186/ict/view/images/ic_2.png);"><img height="7" width="13" class="refrect2" src="./ournet_files/arwUD.png"><span class="cttl allfont" style="margin-top: -19px;">Document</span></div>
+			<div id="left" style="background-image: url(http://221.12.149.186/ict/view/images/ic_3.png);"><img height="13" width="8" src="./ournet_files/arwLR.png"><span class="cttl allfont" style="margin-left: 10px; margin-top: 93px;">Conference</span></div>
+			<div id="right" style="background-image: url(http://221.12.149.186/ict/view/images/ic_4.png);"><img height="13" width="8" class="refrect" src="./ournet_files/arwLR.png"><span class="cttl allfont" style="margin-left: -12px; margin-top: 93px;">Medicare note</span></div>
+		</span>
+
+
+		<!-- list menu -->
+		<div id="listmenu" style="height: 0px; margin-top: 0px; visibility: visible;">
+			<div class="box">
+				<ul>
+					<li><a id="goNav" href="http://221.12.149.186/ict/view/gadget/nav.html?seqFlg=110000001"><img height="134" alt="Myナビゲータ" width="180" src="./ournet_files/b_menu01.png"></a></li>
+					<li><a href="http://221.12.149.186/ict/view/gadget/servCalender.html?seqFlg=140000001"><img height="134" alt="総合サービスカレンダー" width="180" src="./ournet_files/b_menu02.png"></a></li>
+					<li><a href="http://221.12.149.186/ict/view/gadget/medicareGadget.html?seqFlg=120000001"><img height="134" alt="メディケアノート" width="180" src="./ournet_files/b_menu03.png"></a></li>
+					<li><a href="http://221.12.149.186/ict/view/gadget/conference.html?seqFlg=150000001"><img height="134" alt="遠隔カンファレンス" width="180" src="./ournet_files/b_menu04.png"></a></li>
+					<li><a href="http://221.12.149.186/ict/view/gadget/doc.html?seqFlg=130000001"><img height="134" alt="医療介護ドキュメント" width="180" src="./ournet_files/b_menu05.png"></a></li>
+					<li><a href="http://221.12.149.186/ict/view/gadget/fax.html?seqFlg=210000001"><img height="134" alt="FAX送受信" width="180" src="./ournet_files/b_menu06.png"></a></li>
+					<li><a href="http://221.12.149.186/ict/view/gadget/gadget.html?te-uniquekey=14cf1905201#"><img height="134" alt="Mモニター" width="180" src="./ournet_files/b_menu07.png"></a></li>
+					<li><a href="http://221.12.149.186/ict/view/gadget/gadget.html?te-uniquekey=14cf1905201#"><img height="134" alt="電子カルテ" width="180" src="./ournet_files/b_menu08.png"></a></li>
+					<li><a href="http://221.12.149.186/ict/view/gadget/relation.html?seqFlg=160000001"><img height="134" alt="機関情報連携" width="180" src="./ournet_files/b_menu09.png"></a></li>
+					<li><a href="http://221.12.149.186/ict/view/gadget/gadget.html?te-uniquekey=14cf1905201#"><img height="134" alt="レセプト請求管理" width="180" src="./ournet_files/b_menu10.png"></a></li>
+					<li><a href="http://221.12.149.186/ict/view/gadget/gadget.html?te-uniquekey=14cf1905201#"><img height="134" alt="利用者GISマップ" width="180" src="./ournet_files/b_menu11.png"></a></li>
+					<li><a href="http://221.12.149.186/ict/view/gadget/basic.html?seqFlg=170000001"><img height="134" alt="基本情報管理" width="180" src="./ournet_files/b_menu12.png"></a></li>
+					<li><a href="http://221.12.149.186/ict/view/gadget/user.html?seqFlg=180000001"><img height="134" alt="利用者基本台帳" width="180" src="./ournet_files/b_menu13.png"></a></li>
+				</ul>
+			</div>
+		</div>
+
+
+
+		<!-- header -->
+		<div id="headL"><img height="23" alt="" width="212" src="./ournet_files/logo.png"></div>
+		<div id="headR" style="visibility: visible;">
+			<div id="menuSwitch"></div>
+			<form id="gadgetForm" name="gadgetForm" method="post" enctype="application/x-www-form-urlencoded" action="http://221.12.149.186/ict/view/gadget/gadget.html">
+				<a id="" onclick="document.getElementById(&#39;doLogout&#39;).click();" href="javascript:"><div id="logout"></div></a>
+				<input type="submit" id="doLogout" name="gadgetForm:doLogout" style="display:none" class="btn">
+			<input type="hidden" name="gadgetForm/view/gadget/gadget.html" value="gadgetForm"></form>
+		</div>
+
+
+
+		<!-- popup表示 -->
+		
+
+
+
+		<!-- footer -->
+		<div id="etcMenu" style="visibility: visible;">
+			<ul>
+				<li><a href="http://221.12.149.186/ict/view/gadget/gadget.html?te-uniquekey=14cf1905201#"><img height="42" alt="" width="42" src="./ournet_files/et_0.png"><p class="allfont">E karute</p></a></li>
+				<li><a href="http://221.12.149.186/ict/view/gadget/relation.html?seqFlg=160000001"><img height="42" alt="" width="42" src="./ournet_files/et_1.png"><p class="allfont">Cooperate</p></a></li>
+				<li><a href="http://221.12.149.186/ict/view/gadget/fax.html?seqFlg=210000001"><img height="42" alt="" width="42" src="./ournet_files/et_2.png"><p class="allfont">FAX</p></a></li>
+				<li><a href="http://221.12.149.186/ict/view/gadget/gadget.html?te-uniquekey=14cf1905201#"><img height="42" alt="" width="42" src="./ournet_files/et_3.png"><p class="allfont">M monitor</p></a></li>
+			</ul>
+		</div>
+
+		<div id="footR" style="visibility: visible;">
+			<div id="todayMenu" style="top: 215px;">
+				<div id="todayTtl" style="background-position: 0px 0px;"></div>
+				<div class="infoBd"></div>
+				
+				<div id="more" class="allfont"><a href="http://221.12.149.186/ict/view/servCalendar/selectable.html?serType=0&flg=2&pageId=1100&seqFlg=110000001">READMORE<span></span></a></div>
+				<div class="prsBox"></div>
+			</div>
+			<div id="infoMenu" style="top: 215px;">
+				<div id="infoTtl" style="background-position: 0px 0px;"></div>
+				<div class="infoBd"></div>
+				<ul id="newsListItems">
+				<div class="infoNews">
+					<li>
+						<p>
+							<input type="hidden" id="seq" name="newsListItems:0:seq" value="53">
+							</p><p class="nDate allfont"><span id="createDate">2015/02/13</span></p>
+							<p class="allfont"><span id="emergency" class="blink" style="color:red">【緊急】</span><span id="title" class="aa"> Emergency  Notification </span></p>
+						<p></p>
+					</li>
+				</div>
+				
+				<div class="infoNews">
+					<li>
+						<p>
+							<input type="hidden" id="seq" name="newsListItems:1:seq" value="52">
+							</p><p class="nDate allfont"><span id="createDate">2015/02/13</span></p>
+							<p class="allfont"><span id="emergency" class="blink" style="color:red">【緊急】</span><span id="title" class="aa">Emergency Notification </span></p>
+						<p></p>
+					</li>
+				</div>
+				</ul>
+				<div id="more" class="allfont"><a id="goNoticeList" href="http://221.12.149.186/ict/view/mynavi/noticeList.html?seqFlg=110000001&pageId=">READMORE<span></span></a></div>
+				<div class="prsBox"></div>
+			</div>
+		</div>
+
+	</div>
+
+
+</body></html>
